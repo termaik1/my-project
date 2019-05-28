@@ -1,15 +1,8 @@
 import React from "react";
-import classes from  './News.module.css'
-import NewsUserPost from "./NewsModules/NewsUserPost";
+import classes from "./News.module.css";
 
-const News = (props) => {
-    //debugger;
-        return(
-        <div>
-            <NewsUserPost  />
-        </div>
-            
-       
-    )
-}
+
+const News = props => {
+  return <div>News</div>;
+};
 export default News;

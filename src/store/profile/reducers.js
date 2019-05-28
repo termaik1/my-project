@@ -1,5 +1,4 @@
-const ADD_POST = "ADD_POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE_NEW_POST_TEXT";
+import { ADD_POST, UPDATE_NEW_POST_TEXT } from "./constants";
 
 const init = {
   posts: [
@@ -35,16 +34,5 @@ const profilePage = (state = init, action) => {
     }
   }
 };
-export const addPostActionCreat = () => {
-  return {
-    type: ADD_POST
-  };
-};
 
-export const onPostChangeActionCreat = text => {
-  return {
-    type: UPDATE_NEW_POST_TEXT,
-    newText: text
-  };
-};
 export default profilePage;

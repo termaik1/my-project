@@ -1,18 +1,15 @@
 import React from "react";
 import classes from "./Profile.module.css";
-import MyPosts from "./ProfulesModules/MyPosts";
-import ProfileInfo from "./ProfulesModules/ProfileInfo";
+import MyPosts from "../../module/Profiles/MyPosts";
+import ProfileInfo from "../../module/Profiles/ProfileInfo";
 
-const Profile = props => {
+const Profile = ({posts,newPostText,dispatch}) => {
   debugger;
   return (
     <div>
       <ProfileInfo />
 
-      <MyPosts
-       
-       
-      />
+      <MyPosts posts={posts} newPostText={newPostText} dispatch={dispatch} />
     </div>
   );
 };

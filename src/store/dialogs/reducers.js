@@ -1,5 +1,5 @@
-const ADD_MESSAGES = "ADD_MESSAGES";
-const UPDATE_NEW_MESSAGES_TEXT = "UPDATE_NEW_MESSAGEST_TEXT";
+import { ADD_MESSAGES, UPDATE_NEW_MESSAGES_TEXT } from "./constants";
+
 
 const init = {
   dialogs: [
@@ -28,7 +28,7 @@ const dialogsPage = (state = init, action) => {
         message: state.newMessagesText
       };
       const stateCopy = { ...state };
-      state.messages = [ ...state.messages ];
+      state.messages = [...state.messages];
       stateCopy.messages.push(newMessages);
       stateCopy.newMessagesText = " ";
       return stateCopy;
@@ -41,18 +41,6 @@ const dialogsPage = (state = init, action) => {
     default:
       return state;
   }
-};
-
-export const addMessagesActionCreat = () => {
-  return {
-    type: ADD_MESSAGES
-  };
-};
-export const onMessagesChangeActionCreat = text => {
-  return {
-    type: UPDATE_NEW_MESSAGES_TEXT,
-    newText: text
-  };
 };
 
 export default dialogsPage;

@@ -21,26 +21,24 @@ const Navbar = () => {
         </NavLink>
       </div>
       <div className={classes.item}>
-        <NavLink to="/music" activeClassName={classes.activeLink}>
-          Music
+        <NavLink to="/users" activeClassName={classes.activeLink}>
+          Users
         </NavLink>
       </div>
       <div className={classes.item}>
-        <NavLink to="/settings" activeClassName={classes.activeLink}>
-          Settings
+        <NavLink to="/yandexMaps" activeClassName={classes.activeLink}>
+          Map
         </NavLink>
         <div className={classes.item}>
-        <NavLink to="/graphics" activeClassName={classes.activeLink}>
-        Graphics
-        </NavLink>
-        <div>
-        <NavLink to="/friends" activeClassName={classes.activeLink}>
-        Friends
-        </NavLink>
+          <NavLink to="/graphics" activeClassName={classes.activeLink}>
+            Graphics
+          </NavLink>
+          <div>
+            <NavLink to="/friends" activeClassName={classes.activeLink}>
+              Friends
+            </NavLink>
+          </div>
         </div>
-        </div>
-
-        
       </div>
     </nav>
   );

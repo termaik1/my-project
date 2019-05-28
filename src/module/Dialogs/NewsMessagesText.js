@@ -2,20 +2,20 @@ import React from "react";
 import {
   onMessagesChangeActionCreat,
   addMessagesActionCreat
-} from "../../../store/Redusers/dialogsPage";
+} from "./../../store/dialogs/index";
 
-const NewsMessagesText = props => {
+const NewsMessagesText = ({dispatch,newMessagesText}) => {
   debugger;
 
   const newMessageElement = React.createRef();
 
   const addMessages = () => {
-    props.dispatch(addMessagesActionCreat());
+    dispatch(addMessagesActionCreat());
   };
 
   const onMessagesChange = () => {
     const text = newMessageElement.current.value;
-    props.dispatch(onMessagesChangeActionCreat(text));
+    dispatch(onMessagesChangeActionCreat(text));
   };
 
   return (
@@ -24,7 +24,7 @@ const NewsMessagesText = props => {
         <textarea
           onChange={onMessagesChange}
           ref={newMessageElement}
-          placeholder={props.newMessagesText}
+          placeholder={newMessagesText}
         />
         <div>
           <button onClick={addMessages}>addMessages</button>

@@ -1,5 +1,5 @@
-import profilePage from "./Redusers/profilePage";
-import dialogsPage from "./Redusers/dialogsPage";
+import profilePage from "./Reducers/profilePage";
+import dialogsPage from "./Reducers/dialogsPage";
 
 
 

@@ -1,9 +1,9 @@
 import React from "react";
-import classes from "./../StyleModules/MyPosts.module.css";
+import classes from "./style/MyPosts.module.css";
 import {
   onPostChangeActionCreat,
   addPostActionCreat
-} from "../../../store/Redusers/profilePage";
+} from "./../../store/profile/action";
 
 const AddNewPostText = props => {
   const newPostElement = React.createRef();

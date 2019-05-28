@@ -1,6 +1,7 @@
 import React from "react";
-import classes from "./../StyleModules/Post.module.css";
+import classes from "./style/Post.module.css";
 import PostLikesCount from "./PostLikesCount";
+import Images from "./../../assets/img/goose-wallpapers.jpg"
 
 const Post = props => {
   return (
@@ -11,7 +12,7 @@ const Post = props => {
           <PostLikesCount countsLike={props.likesCount} />
         </div>
       </div>
-      <img src="https://stmed.net/sites/default/files/goose-wallpapers-25488-9500005.jpg" />
+      <img src={Images} />
     </div>
   );
 };

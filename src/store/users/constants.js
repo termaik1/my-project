@@ -1,0 +1,5 @@
+const FOLLOW = "FOLLOW";
+const UNFOLLOW = "UNFOLLOW";
+const SET_USERS = "SET_USERS";
+
+export { FOLLOW, UNFOLLOW, SET_USERS };

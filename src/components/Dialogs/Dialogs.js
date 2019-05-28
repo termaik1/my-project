@@ -1,16 +1,16 @@
 import React from "react";
-import classes from "./Dialogs.module.css";
-import DialogsItem from "./DialogsModules/DialogsItem";
-import Message from "./DialogsModules/Message";
-import NewsMessagesText from "./DialogsModules/NewsMessagesText";
-import {connect} from "react-redux"
+import classes from "./../../module/Dialogs/style/Dialogs.module.css";
+import DialogsItem from "../../module/Dialogs/DialogsItem";
+import Message from "../../module/Dialogs/Message";
+import NewsMessagesText from "../../module/Dialogs/NewsMessagesText";
 
-const Dialogs = props => {
-  const dialogsElement = props.dialogs.map(dialog => (
+
+const Dialogs = ({dialogs, messages, newMessagesText,dispatch}) => {
+  const dialogsElement = dialogs.map(dialog => (
     <DialogsItem key={dialog.id} name={dialog.name} id={dialog.id} />
   ));
 
-  const messagesElement = props.messages.map(messag => (
+  const messagesElement = messages.map(messag => (
     <Message key={messag.id} message={messag.message} id={messag.id} />
   ));
 
@@ -20,20 +20,14 @@ const Dialogs = props => {
       <div>
         <div className={classes.messages}>{messagesElement}</div>
         <NewsMessagesText
-          dispatch={props.dispatch}
-          newMessagesText={props.newMessagesText}
+          dispatch={dispatch}
+          newMessagesText={newMessagesText}
         />
       </div>
     </div>
   );
 };
 
-const mapStateToProps = store => {
-  return {
-    dialogs: store.dialogsPage.dialogs,
-    messages: store.dialogsPage.messages,
-    newMessagesText: store.dialogsPage.newMessagesText
-  };
-};
 
-export default connect(mapStateToProps)(Dialogs);
+
+export default Dialogs;

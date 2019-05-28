@@ -1,16 +1,18 @@
 import { createStore, combineReducers } from "redux";
-import profilePage from "./Redusers/profilePage";
-import dialogsPage from "./Redusers/dialogsPage";
+import profilePage from "./profile/index";
+import dialogsPage from "./dialogs/index";
+import usersPage from "./users/index";
 
 
 
 const reducers = combineReducers({
-  profilePage: profilePage,
-  dialogsPage: dialogsPage,
+  profilePage,
+  dialogsPage,
+  usersPage,
   
 });
 
 const store = createStore(reducers);
-window.store = store;
+
 
 export default store;
