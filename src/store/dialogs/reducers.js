@@ -1,7 +1,6 @@
 import { ADD_MESSAGES, UPDATE_NEW_MESSAGES_TEXT } from "./constants";
 
-
-const init = {
+const initialState = {
   dialogs: [
     { id: 1, name: "Dimych" },
     { id: 2, name: "Andrew" },
@@ -20,27 +19,31 @@ const init = {
   newMessagesText: "поле ввода"
 };
 
-const dialogsPage = (state = init, action) => {
-  switch (action.type) {
-    case ADD_MESSAGES: {
-      let newMessages = {
-        id: 6,
-        message: state.newMessagesText
-      };
-      const stateCopy = { ...state };
-      state.messages = [...state.messages];
-      stateCopy.messages.push(newMessages);
-      stateCopy.newMessagesText = " ";
-      return stateCopy;
-    }
-    case UPDATE_NEW_MESSAGES_TEXT: {
-      const stateCopy = { ...state };
-      stateCopy.newMessagesText = action.newText;
-      return stateCopy;
-    }
-    default:
-      return state;
+const dialogsReducers = {
+  [ADD_MESSAGES]: (state, action) => {
+    let newMessages = {
+      id: 6,
+      message: state.newMessagesText
+    };
+    const stateCopy = { ...state };
+    state.messages = [...state.messages];
+    stateCopy.messages.push(newMessages);
+    stateCopy.newMessagesText = " ";
+    return stateCopy;
+  },
+  [UPDATE_NEW_MESSAGES_TEXT]: (state, action) => {
+    const stateCopy = { ...state };
+    stateCopy.newMessagesText = action.newText;
+    return stateCopy;
   }
+};
+
+const dialogsPage = (state = initialState, action) => {
+  const reducers = dialogsReducers[action.type];
+  if (!reducers) {
+    return state;
+  }
+  return reducers(state, action);
 };
 
 export default dialogsPage;

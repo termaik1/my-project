@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Profile.module.css";
-import MyPosts from "../../module/Profiles/MyPosts";
-import ProfileInfo from "../../module/Profiles/ProfileInfo";
+import MyPosts from "./../../module/Profiles/MyPosts/index";
+import ProfileInfo from "./../../module/Profiles/ProfileInfo/index";
 
 const Profile = ({posts,newPostText,dispatch}) => {
   debugger;

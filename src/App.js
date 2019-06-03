@@ -3,13 +3,13 @@ import { BrowserRouter, Route } from "react-router-dom";
 import classes from "./App.module.css";
 import Header from "./components/Header/index";
 import Navbar from "./components/Navbar/index";
-import Profile from "./components/Profile/index";
-import Dialogs from "./components/Dialogs/index";
+import ProfileContainer from "./components/Profile/index";
+import DialogsContainer from "./components/Dialogs/index";
 import News from "./components/News/index";
 import YandexMaps from "./components/YandexMaps/index";
 import Graphics from "./components/Graphics/index";
 import Friends from "./components/Friends/index";
-import Users from "./components/Users/index";
+import UsersContainer from "./components/Users/index";
 
 const App = () => {
   return (
@@ -19,10 +19,10 @@ const App = () => {
         <Navbar />
         <div className={classes.appWrapperContent}>
           {/* exact - возможно это придеться использовать для точного выбора url'а */}
-          <Route path="/dialogs" render={() => <Dialogs />} />
-          <Route path="/profile" render={() => <Profile />} />
+          <Route path="/dialogs" render={() => <DialogsContainer />} />
+          <Route path="/profile" render={() => <ProfileContainer />} />
           <Route path="/news" render={() => <News />} />
-          <Route path="/users" render={() => <Users />} />
+          <Route path="/users" render={() => <UsersContainer />} />
           <Route path="/yandexMaps" render={() => <YandexMaps />} />
           <Route path="/graphics" render={() => <Graphics />} />
           <Route path="/friends" render={() => <Friends />} />

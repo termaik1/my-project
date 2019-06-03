@@ -1,11 +1,10 @@
 import React from "react";
-import classes from "./../../module/Dialogs/style/Dialogs.module.css";
-import DialogsItem from "../../module/Dialogs/DialogsItem";
-import Message from "../../module/Dialogs/Message";
-import NewsMessagesText from "../../module/Dialogs/NewsMessagesText";
+import classes from "./Dialogs.module.css";
+import DialogsItem from "./../../module/Dialogs/DialogsItem/index";
+import Message from "./../../module/Dialogs/Message/index";
+import NewsMessagesText from "./../../module/Dialogs/NewsMessagesText/index";
 
-
-const Dialogs = ({dialogs, messages, newMessagesText,dispatch}) => {
+const Dialogs = ({ dialogs, messages, newMessagesText, dispatch }) => {
   const dialogsElement = dialogs.map(dialog => (
     <DialogsItem key={dialog.id} name={dialog.name} id={dialog.id} />
   ));
@@ -27,7 +26,5 @@ const Dialogs = ({dialogs, messages, newMessagesText,dispatch}) => {
     </div>
   );
 };
-
-
 
 export default Dialogs;

@@ -1,4 +1,3 @@
+import DialogsContainer from "./DialogsContainer";
 
-import Container from "./Container/Container";
-
-export default Container;
+export default DialogsContainer;

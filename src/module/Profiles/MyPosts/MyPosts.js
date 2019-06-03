@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./style/MyPosts.module.css";
-import Post from "./Post";
-import AddNewPostText from "./AddNewPostText";
+import classes from "./MyPosts.module.css";
+import Post from "../Post/index";
+import AddNewPostText from "../AddNewPostText/index";
 
 
 const MyPosts = ({posts,newPostText,dispatch}) => {

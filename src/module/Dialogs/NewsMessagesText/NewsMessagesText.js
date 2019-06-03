@@ -2,9 +2,9 @@ import React from "react";
 import {
   onMessagesChangeActionCreat,
   addMessagesActionCreat
-} from "./../../store/dialogs/index";
+} from "../../../store/dialogs/index";
 
-const NewsMessagesText = ({dispatch,newMessagesText}) => {
+const NewsMessagesText = ({ dispatch, newMessagesText }) => {
   debugger;
 
   const newMessageElement = React.createRef();

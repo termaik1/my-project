@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { followAC, setUsersAC,unfollowAC } from "./../../../store/users/action";
-import Users from "../Users";
+import { followAC, setUsersAC,unfollowAC } from "../../store/users/action";
+import Users from "./Users";
 
 const mapStateToProps = store => {
   
