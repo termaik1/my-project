@@ -5,9 +5,9 @@ import axios from "axios";
 class Graphics extends React.Component {
   sumbitHandler(e) {
     e.preventDefault();
-    axios.post("http://localhost:3102/user/login", {
-      login: 'qwerty123',
-      password: '12345s'     
+    axios.post("http://localhost:3102/categories", {
+      categories: 'jaja'
+      
     }).then(res => res.data);
   }
   render() {

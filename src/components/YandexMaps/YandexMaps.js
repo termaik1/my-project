@@ -9,6 +9,7 @@ import {
   GeolocationControl
 } from "react-yandex-maps";
 
+
 const YandexMaps = props => {
   const mapState = {
     center: [54.319658, 48.395774],

@@ -1,39 +1,36 @@
 import React from "react";
 import classes from "./users.module.css";
-import axios from "axios";
+import { NavLink } from "react-router-dom";
 
-class Users extends React.Component {
-  componentDidMount() {
-    axios.get("https://reqres.in/api/users").then(response => {
-      debugger;
-      this.props.setUsers(response.data.data);
-    });
-  }
+import Images from "./../../assets/img/iconAva.png";
 
-  render() {
-    return (
-      <div>
-        {this.props.users.map(u => (
-          <div key={u.id}>
-            <span>
-              <div>
-                <img src={u.avatar} className={classes.userPhoto} />
-              </div>
-            </span>
-            <span>
-              <span>
-                <div>First name: {u.first_name}</div>
-                <div>Last name: {u.last_name}</div>
-              </span>
-              <span>
-                <div>Email: {u.email}</div>
-              </span>
-            </span>
-          </div>
-        ))}
-      </div>
-    );
-  }
+{
+  /*https://reqres.in/api/users*/
 }
+const Users = ({users}) => {
+  return (
+    <div>
+      {users.map(users => (
+        <div key={users.id}>
+          <span>
+            <div>
+            <NavLink to={'/profile/' + users.id}>
+              <img className={classes.userImg} src={users.avatar} />
+            </NavLink>
+              
+            </div>
+          </span>
+          <span>
+            <span>
+              <div>First name: {users.first_name}</div>
+              <div>Last name: {users.last_name}</div>
+            </span>
+            <span />
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default Users;

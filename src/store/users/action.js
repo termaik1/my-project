@@ -1,5 +1,5 @@
-import {FOLLOW,UNFOLLOW,SET_USERS} from "./constants"
+import { SET_USERS, TRIGGER_FETCHING } from "./constants";
 
-export const followAC = (userId) => ({type: FOLLOW, userId })
-export const unfollowAC = (userId) => ({type: UNFOLLOW, userId })
-export const setUsersAC = (users) => ({type: SET_USERS, users })
+
+export const setUsers = users => ({ type: SET_USERS, users });
+export const setFetching = fetching => ({ type: TRIGGER_FETCHING, fetching });

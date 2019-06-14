@@ -1,4 +1,4 @@
-import { ADD_POST, UPDATE_NEW_POST_TEXT } from "./constants";
+import { ADD_POST, UPDATE_NEW_POST_TEXT, SET_USERS_PROFILE } from "./constants";
 
 const initialState = {
   posts: [
@@ -7,7 +7,8 @@ const initialState = {
     { id: 3, message: "Blabla", likesCount: 11 },
     { id: 4, message: "Dada", likesCount: 11 }
   ],
-  newPostText: "поле ввода"
+  newPostText: "поле ввода",
+  profile: null
 };
 
 const profileReducers = {
@@ -27,6 +28,9 @@ const profileReducers = {
     const stateCopy = { ...state };
     stateCopy.newPostText = action.newText;
     return stateCopy;
+  },
+  [SET_USERS_PROFILE]: (state, action) => {
+    return { ...state, profile: action.profile };
   }
 };
 

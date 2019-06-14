@@ -5,7 +5,7 @@ import AddNewPostText from "../AddNewPostText/index";
 
 
 const MyPosts = ({posts,newPostText,dispatch}) => {
-  debugger;
+  
   const postElemets = posts.map(posts => (
     <Post
       key={posts.id}
