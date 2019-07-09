@@ -13,7 +13,7 @@ export const onPostChangeActionCreat = text => {
   };
 };
 
-export const setUsersProfile = profile => {
+export const setUserProfile = profile => {
   return {
     type: SET_USERS_PROFILE,
     profile

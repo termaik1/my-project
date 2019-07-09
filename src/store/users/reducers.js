@@ -1,18 +1,16 @@
-import {  SET_USERS,TRIGGER_FETCHING } from "./constants";
+import { SET_USERS, TRIGGER_FETCHING } from "./constants";
 
 const initialState = {
   users: [],
   fetching: true
 };
 
-
-
 const usersReducers = {
   [SET_USERS]: (state, action) => {
     return { ...state, users: [...state.users, ...action.users] };
   },
-  [TRIGGER_FETCHING] : (state,action) => {
-    return {...state , fetching: action.fetching }
+  [TRIGGER_FETCHING]: (state, action) => {
+    return { ...state, fetching: action.fetching };
   }
 };
 

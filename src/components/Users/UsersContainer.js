@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { setUsers, setFetching } from "../../store/users/action";
+import { setUsers, setFetching } from "store/users/action";
 import UsersAPI from "./UsersAPI";
 
 const mapStateToProps = store => {
@@ -9,10 +9,18 @@ const mapStateToProps = store => {
   };
 };
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setUsers: users => {
+      dispatch(setUsers(users))
+    },
+    setFetching: fetching => {
+      dispatch(setFetching(fetching))
+    }
+  };
+};
+
 export default connect(
   mapStateToProps,
-  {
-    setUsers,
-    setFetching
-  }
+  mapDispatchToProps
 )(UsersAPI);

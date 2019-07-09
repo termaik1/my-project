@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./DialogsItem.module.css";
-import Images from "./../../../assets/img/iconAva.png"
+import Images from "assets/img/iconAva.png"
 
 const DialogsItem = ({id,name}) => {
   return (

@@ -4,11 +4,15 @@ import classes from "./Graphics.module.css";
 import axios from "axios";
 class Graphics extends React.Component {
   sumbitHandler(e) {
+    debugger;
     e.preventDefault();
-    axios.post("http://localhost:3102/categories", {
-      categories: 'jaja'
+    axios.post("https://reqres.in/api/register", {
       
-    }).then(res => res.data);
+    email: "eve.holt@reqres.in",
+      password: "pistol"
+  }).then(res => {
+    debugger;
+    res.data});
   }
   render() {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import classes from "./App.module.css";
-import Header from "./components/Header/index";
+import HeaderContainer from "./components/Header/index";
 import Navbar from "./components/Navbar/index";
 import ProfileContainer from "./components/Profile/index";
 import DialogsContainer from "./components/Dialogs/index";
@@ -15,17 +15,17 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className={classes.appWrapper}>
-        <Header />
+        <HeaderContainer />
         <Navbar />
         <div className={classes.appWrapperContent}>
           {/* exact - возможно это придеться использовать для точного выбора url'а */}
-          <Route path="/dialogs" render={() => <DialogsContainer />} />
-          <Route path="/profile/:userId" render={() => <ProfileContainer />} />
-          <Route path="/news" render={() => <News />} />
-          <Route path="/users" render={() => <UsersContainer />} />
-          <Route path="/yandexMaps" render={() => <YandexMaps />} />
-          <Route path="/graphics" render={() => <Graphics />} />
-          <Route path="/friends" render={() => <Friends />} />
+          <Route path="/dialogs" component={DialogsContainer} />
+          <Route path="/profile/:userId" component={ProfileContainer } />
+          <Route path="/news" component={News} />
+          <Route path="/users" component={UsersContainer} />
+          <Route path="/yandexMaps" component={YandexMaps} />
+          <Route path="/graphics" component={Graphics} />
+          <Route path="/friends" component={Friends} />
         </div>
       </div>
     </BrowserRouter>

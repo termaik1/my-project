@@ -1,14 +1,22 @@
 import React from "react";
-import IMG from "./../../assets/img/spicialAngle.png"
+import Images from "assets/img/spicialAngle.png";
 
 import classes from "./Header.module.css";
 
-const Header = () => {
-return(
-    <header className={classes.header}>
-        <img src={IMG} />
-      </header>
-);
-}
+import { NavLink } from "react-router-dom";
 
-export default Header
+const Header = ({  first_name,  userAuth }) => {
+  //debugger;
+
+  return (
+    <header className={classes.header}>
+      <img src={Images} />
+
+      <div className={classes.loginBlock}>
+        {userAuth ? first_name : <NavLink to={"/login"}>login</NavLink>}
+      </div>
+    </header>
+  );
+};
+
+export default Header;

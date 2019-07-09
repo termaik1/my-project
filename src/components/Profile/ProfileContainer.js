@@ -1,28 +1,36 @@
 import React from "react";
-import axios from "axios";
 import { connect } from "react-redux";
-import { setUsersProfile } from "../../store/profile/index";
+import { setUserProfile } from "store/profile/index";
 import Profiles from "./Profiles";
 import { withRouter } from "react-router-dom";
+import { profilePage_profile } from "store/profile/selectors";
+import DataAPI from "api/index";
 
 class ProfileContainer extends React.Component {
   componentDidMount() {
-    debugger;
     const userId = this.props.match.params.userId;
 
-    axios.get(`https://reqres.in/api/users/` + userId).then(response => {
-      this.props.setUsersProfile(response.data.data);
+    DataAPI.getUsersId(userId).then(response => {
+      this.props.setUserProfile(response);
     });
   }
 
   render() {
-    return <Profiles  profile={this.props.profile} />;
+    return <Profiles profile={this.props.profile} />;
   }
 }
 
 const mapStateToProps = store => {
   return {
-    profile: store.profilePage.profile
+    profile: profilePage_profile(store)
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setUserProfile: profile => {
+      dispatch(setUserProfile(profile));
+    }
   };
 };
 
@@ -30,7 +38,5 @@ const withRouterData = withRouter(ProfileContainer);
 
 export default connect(
   mapStateToProps,
-  {
-    setUsersProfile
-  }
+  mapDispatchToProps
 )(withRouterData);

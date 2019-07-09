@@ -8,7 +8,16 @@ module.exports = {
     filename: "index_bundle.js"
   },
   resolve: {
-    extensions: [".js", ".jsx","scss"]
+    alias: {
+      assets: path.join(__dirname, "src/assets"),
+      common: path.join(__dirname, "src/common"),
+      components: path.join(__dirname, "src/components"),
+      module: path.join(__dirname, "src/module"),
+      store: path.join(__dirname, "src/store"),
+      api: path.join(__dirname, "src/api")
+    },
+    modules: ["src", "node_modules"],
+    extensions: [".js", ".jsx", "scss"]
   },
   module: {
     rules: [
@@ -34,7 +43,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif|webp)$/,
         use: ["file-loader"]
-    }
+      }
     ]
   },
   plugins: [

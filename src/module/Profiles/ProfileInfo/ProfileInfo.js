@@ -1,9 +1,10 @@
 import React from "react";
 import classes from "./ProfileInfo.module.css";
-import Images from "./../../../assets/img/ava.jpg";
-import SpinnerLoader from "../../../Common/spinnerLoader";
+import Images from "assets/img/ava.jpg";
+import SpinnerLoader from "common/spinnerLoader/index";
 
 const ProfileInfo = ({ profile }) => {
+ 
   if (!profile) {
     return <SpinnerLoader />;
   }

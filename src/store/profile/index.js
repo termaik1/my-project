@@ -1,7 +1,7 @@
 import profilePage from "./reducers";
-import { addPostActionCreat, onPostChangeActionCreat, setUsersProfile } from "./action";
+import { addPostActionCreat, onPostChangeActionCreat, setUserProfile } from "./action";
 
 
 
 export default profilePage;
-export {addPostActionCreat, onPostChangeActionCreat, setUsersProfile}
+export {addPostActionCreat, onPostChangeActionCreat, setUserProfile}

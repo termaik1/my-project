@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./Profiles.module.css";
-import MyPostsContainer from "../../module/Profiles/MyPosts/index";
-import ProfileInfo from "../../module/Profiles/ProfileInfo/index";
+import MyPostsContainer from "module/Profiles/MyPosts/index";
+import ProfileInfo from "module/Profiles/ProfileInfo/index";
 
 
 const Profile = ({profile}) => {
-  debugger;
+  
   return (
     <div>
       <ProfileInfo profile={profile}/>

@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./users.module.css";
 import { NavLink } from "react-router-dom";
 
-import Images from "./../../assets/img/iconAva.png";
+
 
 {
   /*https://reqres.in/api/users*/

@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./Dialogs.module.css";
-import DialogsItem from "./../../module/Dialogs/DialogsItem/index";
-import Message from "./../../module/Dialogs/Message/index";
-import NewsMessagesText from "./../../module/Dialogs/NewsMessagesText/index";
+import DialogsItem from "module/Dialogs/DialogsItem/index";
+import Message from "module/Dialogs/Message/index";
+import NewsMessagesText from "module/Dialogs/NewsMessagesText/index";
 
 const Dialogs = ({ dialogs, messages, newMessagesText, dispatch }) => {
   const dialogsElement = dialogs.map(dialog => (

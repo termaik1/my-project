@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
 import Users from "./Users";
-import SpinnerLoader from "../../Common/spinnerLoader/index";
+import SpinnerLoader from "common/spinnerLoader/index";
+import DataAPI from "api/index";
+
 
 
 {
@@ -11,9 +13,9 @@ class UsersAPI extends React.Component {
   componentDidMount() {
  
     this.props.setFetching(true);
-    axios.get("https://reqres.in/api/users").then(response => {
-         debugger;
-      this.props.setUsers(response.data.data);
+    DataAPI.getUsers().then(response => {
+    
+      this.props.setUsers(response);
       this.props.setFetching(false);
     });
   }
