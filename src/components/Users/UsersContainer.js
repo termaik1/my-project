@@ -1,6 +1,28 @@
+import React from "react";
+import Users from "./Users";
+import SpinnerLoader from "common/spinnerLoader/index";
+import DataAPI from "api/index";
 import { connect } from "react-redux";
-import { setUsers, setFetching } from "store/users/action";
-import UsersAPI from "./UsersAPI";
+import { setFetching } from "store/users/action";
+import { getUsers } from "store/users/thunk";
+
+{
+  /*https://reqres.in/api/users*/
+}
+class UsersContainer extends React.Component {
+  componentDidMount() {
+    this.props.getUsers();
+  }
+
+  render() {
+    return (
+      <>
+        {this.props.fetching ? <SpinnerLoader /> : null}
+        <Users users={this.props.users} />;
+      </>
+    );
+  }
+}
 
 const mapStateToProps = store => {
   return {
@@ -9,13 +31,13 @@ const mapStateToProps = store => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    setUsers: users => {
-      dispatch(setUsers(users))
+    getUsers: () => {
+      dispatch(getUsers());
     },
     setFetching: fetching => {
-      dispatch(setFetching(fetching))
+      dispatch(setFetching(fetching));
     }
   };
 };
@@ -23,4 +45,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UsersAPI);
+)(UsersContainer);

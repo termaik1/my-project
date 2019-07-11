@@ -5,9 +5,7 @@ import classes from "./Header.module.css";
 
 import { NavLink } from "react-router-dom";
 
-const Header = ({  first_name,  userAuth }) => {
-  //debugger;
-
+const Header = ({ first_name, userAuth }) => {
   return (
     <header className={classes.header}>
       <img src={Images} />

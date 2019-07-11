@@ -14,6 +14,7 @@ export const onPostChangeActionCreat = text => {
 };
 
 export const setUserProfile = profile => {
+  debugger;
   return {
     type: SET_USERS_PROFILE,
     profile

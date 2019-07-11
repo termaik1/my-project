@@ -1,18 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setUserProfile } from "store/profile/index";
 import Profiles from "./Profiles";
 import { withRouter } from "react-router-dom";
 import { profilePage_profile } from "store/profile/selectors";
-import DataAPI from "api/index";
+import { getUserProfile } from "store/profile/thunk";
 
 class ProfileContainer extends React.Component {
-  componentDidMount() {
-    const userId = this.props.match.params.userId;
+  constructor(props) {
+    super(props);
 
-    DataAPI.getUsersId(userId).then(response => {
-      this.props.setUserProfile(response);
-    });
+    this.user = {
+      id: this.props.match.params.userId
+    };
+  }
+
+  componentDidMount() {
+    const userId = this.user.id;
+    this.props.getUserProfile(userId);
   }
 
   render() {
@@ -28,8 +32,8 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUserProfile: profile => {
-      dispatch(setUserProfile(profile));
+    getUserProfile: userId => {
+      dispatch(getUserProfile(userId));
     }
   };
 };

@@ -5,14 +5,13 @@ const instance = axios.create({
 });
 
 export const DataAPI = {
-  
   getUsers() {
     return instance.get("users").then(response => {
       return response.data.data;
     });
   },
-  getUsersId(userId) {
-        return instance.get("users/" + userId).then(response => {
+  getUserId(userId) {
+    return instance.get("users/" + userId).then(response => {
       return response.data.data;
     });
   },
