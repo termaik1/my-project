@@ -1,9 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import Profiles from "./Profiles";
-import { withRouter } from "react-router-dom";
-import { profilePage_profile } from "store/profile/selectors";
+import { withRouter ,Redirect  } from "react-router-dom";
+import { profile } from "store/profile/selectors";
 import { getUserProfile } from "store/profile/thunk";
+import { userAuth } from "store/authorization/selectors";
 
 class ProfileContainer extends React.Component {
   constructor(props) {
@@ -20,13 +21,18 @@ class ProfileContainer extends React.Component {
   }
 
   render() {
+    if(!this.props.isAuth) {
+      debugger;
+      return <Redirect to={"/login"} />
+    }
     return <Profiles profile={this.props.profile} />;
   }
 }
 
 const mapStateToProps = store => {
   return {
-    profile: profilePage_profile(store)
+    profile: profile(store),
+    isAuth: userAuth(store)
   };
 };
 

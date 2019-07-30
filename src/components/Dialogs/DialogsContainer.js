@@ -1,13 +1,15 @@
 import { connect } from "react-redux";
 import Dialogs from "./Dialogs";
-import { dialogsPage_dialogs, dialogsPage_messages, dialogsPage_newMessagesText } from "store/dialogs/selectors";
+import { dialogs, messages, newMessagesText } from "store/dialogs/selectors";
+import { userAuth } from "store/authorization/selectors";
 
 
 const mapStateToProps = store => {
     return {
-      dialogs: dialogsPage_dialogs(store),
-      messages: dialogsPage_messages(store),
-      newMessagesText: dialogsPage_newMessagesText(store)
+      dialogs: dialogs(store),
+      messages: messages(store),
+      newMessagesText: newMessagesText(store),
+      isAuth: userAuth(store)
     };
   };
   

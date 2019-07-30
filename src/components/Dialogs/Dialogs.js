@@ -1,10 +1,11 @@
 import React from "react";
 import classes from "./Dialogs.module.css";
-import DialogsItem from "module/Dialogs/DialogsItem/index";
-import Message from "module/Dialogs/Message/index";
-import NewsMessagesText from "module/Dialogs/NewsMessagesText/index";
+import DialogsItem from "module/Dialogs/DialogsItem";
+import Message from "module/Dialogs/Message";
+import NewsMessagesText from "module/Dialogs/NewsMessagesText";
 
-const Dialogs = ({ dialogs, messages, newMessagesText, dispatch }) => {
+import { Redirect} from "react-router-dom";
+const Dialogs = ({ dialogs, messages, newMessagesText, dispatch, isAuth  }) => {
   const dialogsElement = dialogs.map(dialog => (
     <DialogsItem key={dialog.id} name={dialog.name} id={dialog.id} />
   ));
@@ -12,6 +13,9 @@ const Dialogs = ({ dialogs, messages, newMessagesText, dispatch }) => {
   const messagesElement = messages.map(messag => (
     <Message key={messag.id} message={messag.message} id={messag.id} />
   ));
+  if( !isAuth) {
+    return <Redirect to={"/login"} />
+  }
 
   return (
     <div className={classes.dialogs}>

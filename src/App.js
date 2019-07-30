@@ -1,15 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import classes from "./App.module.css";
-import HeaderContainer from "./components/Header/index";
-import Navbar from "./components/Navbar/index";
-import ProfileContainer from "./components/Profile/index";
-import DialogsContainer from "./components/Dialogs/index";
-import News from "./components/News/index";
-import YandexMaps from "./components/YandexMaps/index";
-import Graphics from "./components/Graphics/index";
-import Friends from "./components/Friends/index";
-import UsersContainer from "./components/Users/index";
+import HeaderContainer from "./components/Header";
+import Navbar from "./components/Navbar";
+import ProfileContainer from "./components/Profile";
+import DialogsContainer from "./components/Dialogs";
+import News from "./components/News";
+import YandexMaps from "./components/YandexMaps";
+import Graphics from "./components/Graphics";
+import Friends from "./components/Friends";
+import UsersContainer from "./components/Users";
+import Login from "./components/login/login";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/yandexMaps" component={YandexMaps} />
           <Route path="/graphics" component={Graphics} />
           <Route path="/friends" component={Friends} />
+          <Route path="/login" component={Login} />
         </div>
       </div>
     </BrowserRouter>

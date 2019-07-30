@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import profilePage from "store/profile/index";
-import dialogsPage from "store/dialogs/index";
-import usersPage from "store/users/index";
-import authUser from "store/authorization/index";
+import profilePage from "store/profile";
+import dialogsPage from "store/dialogs";
+import usersPage from "store/users";
+import authUser from "store/authorization";
 
 
 const reducers = combineReducers({

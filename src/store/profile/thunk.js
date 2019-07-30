@@ -1,4 +1,4 @@
-import DataAPI from "api/index";
+import DataAPI from "api";
 import { setUserProfile } from "store/profile/action";
 
 export const getUserProfile = userId => dispatch => {

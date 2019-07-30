@@ -6,17 +6,20 @@ const instance = axios.create({
 
 export const DataAPI = {
   getUsers() {
-    return instance.get("users").then(response => {
+    const Users = instance.get("users").then(response => {
       return response.data.data;
     });
+
+    return Users;
   },
   getUserId(userId) {
-    return instance.get("users/" + userId).then(response => {
+    const UserId = instance.get("users/" + userId).then(response => {
       return response.data.data;
     });
+    return UserId;
   },
   postRegisterId(email, password) {
-    return instance
+    const RegisterId = instance
       .post("register", {
         email,
         password
@@ -24,5 +27,6 @@ export const DataAPI = {
       .then(response => {
         return response.data.id;
       });
+    return RegisterId;
   }
 };

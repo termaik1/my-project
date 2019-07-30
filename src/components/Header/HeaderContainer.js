@@ -3,21 +3,21 @@ import classes from "./Header.module.css";
 import { connect } from "react-redux";
 import Header from "./Header";
 import {
-  authUser_first_name,
-  authUser_userAuth
+  firstName,
+  userAuth
 } from "store/authorization/selectors";
 import { postRegister_getUser } from "store/authorization/thunk";
 
 class HeaderContainer extends React.Component {
   componentDidMount() {
-    let email = "eve.holt@reqres.in";
+    let email = "eve.holt@reqres.in1";
     let password = "pisfrfrfrfrftol111111";        
     this.props.postRegister_getUser(email, password);
   }
   render() {
     return (
       <Header
-        first_name={this.props.first_name}
+        firstName={this.props.firstName}
         userAuth={this.props.userAuth}
       />
     );
@@ -26,8 +26,8 @@ class HeaderContainer extends React.Component {
 
 const mapStateToProps = store => {
   return {
-    first_name: authUser_first_name(store),
-    userAuth: authUser_userAuth(store)
+    firstName: firstName(store),
+    userAuth: userAuth(store)
   };
 };
 const mapDispatchToProps = dispatch => {

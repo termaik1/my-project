@@ -1,4 +1,4 @@
-import DataAPI from "api/index";
+import DataAPI from "api";
 import { setUserDataAuth } from "store/authorization/action";
 
 export const postRegister_getUser = (email, password) => dispatch => {

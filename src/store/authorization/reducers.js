@@ -10,11 +10,8 @@ const initialState = {
 };
 
 const authReducers = {
-  
   [SET_USER_DATA]: (state, action) => {
-    return { ...state,
-       ...action.data,
-        userAuth: true };
+    return { ...state, ...action.data, userAuth: true };
   }
 };
 

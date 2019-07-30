@@ -1,6 +1,6 @@
 import React from "react";
 import Users from "./Users";
-import SpinnerLoader from "common/spinnerLoader/index";
+import SpinnerLoader from "common/spinnerLoader";
 import DataAPI from "api/index";
 import { connect } from "react-redux";
 import { setFetching } from "store/users/action";

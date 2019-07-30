@@ -1,1 +1,1 @@
-export const profilePage_profile = (store) => store.profilePage.profile;
+export const profile = (store) => store.profilePage.profile;
